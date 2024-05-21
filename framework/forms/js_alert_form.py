@@ -23,3 +23,4 @@ class JavaScriptAlertForm(BaseForm):
 
     def is_success_message_displayed(self):
         return self.__success_message_lbl.state.is_displayed
+
