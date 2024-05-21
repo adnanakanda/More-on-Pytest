@@ -5,11 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from browser.py_quality_services import PyQualityServices
 
 from framework.forms.js_alert_from import JavaScriptAlertForm
-from framework.forms.main_form import MainForm
 from framework.tests.base_test import Test_base
 
 class TestAlert(Test_base):
-    __main_form: MainForm = MainForm()
     __js_alert_form: JavaScriptAlertForm = JavaScriptAlertForm()
 
     def test_alert(self):
