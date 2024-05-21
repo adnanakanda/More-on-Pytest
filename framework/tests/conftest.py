@@ -8,14 +8,3 @@ def pytest_sessionstart(session):
     PyQualityServices.browser_factory = BrowserFactory()
     PyQualityServices.get_browser()
 
-    settings = JsonSettingsFile("config.json")
-    # self.test_data = JsonSettingsFile("test_data.json")
-
-    browser = PyQualityServices.get_browser()
-    browser.maximize()
-    browser.go_to(settings.get_value("url"))
-
-    yield
-
-    browser.quit()
-
