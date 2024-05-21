@@ -10,7 +10,7 @@ from framework.utils.browser_factory import BrowserFactory
 
 
 class Test_base:
-    __main_form: MainForm = MainForm()
+
 
     @pytest.fixture(scope="session", autouse=True)
     def prepare_browser_factory(request):
@@ -22,7 +22,7 @@ class Test_base:
         browser.maximize()
         browser.go_to(settings.get_value("url"))
 
-        yield
+        yield browser
 
         browser.quit()
 
