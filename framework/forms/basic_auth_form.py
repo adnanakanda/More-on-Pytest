@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class BasicAuthForm(BaseForm):
 
     __page_name: str  = "Basic Auth"
-    __success_msg_elemnt = PyQualityServices.element_factory.get_leble((By.XPATH,LocatorConstant.PRECISE_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials"),"Successful Authentication"))
+    __success_msg_element = PyQualityServices.element_factory.get_leble((By.XPATH,LocatorConstant.PRECISE_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials"),"Successful Authentication"))
 
     def __init__(self):
         super(BasicAuthForm, self).__init__(
@@ -16,4 +16,4 @@ class BasicAuthForm(BaseForm):
 
 
     def is_success_msg_displayed(self):
-        return self.__success_msg_elemnt.state.is_displayed
+        return self.__success_msg_element.state.is_displayed
