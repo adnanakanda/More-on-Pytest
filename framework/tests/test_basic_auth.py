@@ -1,10 +1,4 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from browser.py_quality_services import PyQualityServices
-
-from framework.tests.base_test import Test_base
 from framework.forms.main_form import MainForm
 from framework.tests.base_test import Test_base
 from framework.forms.basic_auth_form import BasicAuthForm

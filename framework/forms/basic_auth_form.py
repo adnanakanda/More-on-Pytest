@@ -2,13 +2,15 @@ from forms.base_form import BaseForm
 from browser.py_quality_services import PyQualityServices
 from selenium.webdriver.common.by import By
 from framework.locator_constants import LocatorConstant, ElementNameConstant
-from framework.tuple_utils import fill_locator_value
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 class BasicAuthForm(BaseForm):
 
     __page_name: str  = "Basic Auth"
-    __success_msg_element = PyQualityServices.element_factory.get_leble((By.XPATH,LocatorConstant.PRECISE_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials"),"Successful Authentication"))
+    __success_msg_element = PyQualityServices.element_factory.get_label(
+        (
+        By.XPATH, LocatorConstant.PRECISE_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials")),
+        "Successful Authentication"
+    )
 
     def __init__(self):
         super(BasicAuthForm, self).__init__(
