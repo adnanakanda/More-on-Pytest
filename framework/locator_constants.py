@@ -19,10 +19,10 @@ class LocatorConstant:
     PRECISE_TEXT_LOCATOR = "//*[text()='{}']"
     PARTIAL_TEXT_LOCATOR = "//*[contains(text(),'{}')]"
     FORM_ROOT_LOCATOR: Tuple[By, str] = (By.XPATH, "div[data-testid='root']")
-    NAVBAR_BTN_LOCATOR: Tuple[By, str] = (By.XPATH, "//span[contains(text(),'%s')]")
+    NAVBAR_BTN_LOCATOR: Tuple[By, str] = (By.XPATH, "//span[contains(text(),'{}')]")
     SONG_TEXT_BOX_LOCATOR: Tuple[By, str] = (By.XPATH, "//form//input[@data-testid='search-input']")
     SINGER_BTN_LOCATOR: Tuple[By, str] = (By.CSS_SELECTOR, "div[data-testid='herocard-click-handler']")
-    SONG_LOCATOR: Tuple[By, str] = (By.XPATH, "//div[contains(text(),'%s')]")
+    SONG_LOCATOR: Tuple[By, str] = (By.XPATH, "//div[contains(text(),'{}')]")
     ROOT_LOCATOR: Tuple[By, str] = (By.CSS_SELECTOR, "//div[@data-testid='root']")
     RECENT_SEARCH_SINGER: Tuple[By, str] = (
         By.XPATH, "//section[@aria-label='Recent searches']//div[@data-testid='grid-container']/div"

@@ -7,7 +7,7 @@ class BasicAuthForm(BaseForm):
 
     __page_name: str  = "Basic Auth"
     __success_msg_element = PyQualityServices.element_factory.get_label(
-        (By.XPATH, LocatorConstant.PRECISE_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials.")),
+        (By.XPATH, LocatorConstant.PARTIAL_TEXT_LOCATOR.format("Congratulations! You must have the proper credentials.")),
         "Success message text")
 
     def __init__(self):
