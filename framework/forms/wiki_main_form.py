@@ -30,5 +30,4 @@ class Wiki_MainForm(BaseForm):
 
 
     def click_search_btn(self):
-        #assert self.__search_button is not None, "Search button was not found"
         self.__search_button.click()
