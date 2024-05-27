@@ -14,7 +14,7 @@ class TestAlert(Test_base):
 
     def test_alert(self, prepare_browser_factory):
         browser = prepare_browser_factory
-        self.__main_form.get_navigation_link("JavaScript Alerts").click()
+        self.__main_form.click_navigation_link("JavaScript Alerts")
         self.__js_alert_form.click_js_alert_btn()
         browser.handle_alert('accept')
         assert self.__js_alert_form.is_success_message_displayed(), "Success message is not displayed"
