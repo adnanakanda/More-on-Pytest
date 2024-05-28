@@ -14,16 +14,14 @@ class FileUtil:
             raise FileNotFoundError("File %s not found")
 
     @staticmethod
-    def is_file_downloaded(file_address: str, label_file_content: Label):
-        try:
-            PyQualityServices.get_browser().go_to(file_address)
-            return label_file_content.state.is_displayed
-        except WebDriverException:
+    def is_file_downloaded(file_address):
+        if os.path.exists(file_address):
+            return True
+        else:
             return False
 
     @staticmethod
     def get_target_file_path(filename: str):
-        #download_directory = 'C:\Users\a.akanda\Desktop\Downloads '
         download_dir = PyQualityServices.get_browser().download_directory
         dirs_split_by_sep = download_dir.split('/') if '/' in download_dir else download_dir.split('\\')
         dirs_name = [dir_name for dir_name in dirs_split_by_sep if dir_name != '']
