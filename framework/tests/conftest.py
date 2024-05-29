@@ -19,3 +19,8 @@ def browser(request):
     yield browser
 
     browser.quit()
+
+@pytest.fixture(scope="session")
+def base_url():
+    settings = JsonSettingsFile("config.json")
+    return settings.get_value("url")
