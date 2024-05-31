@@ -6,8 +6,6 @@ from framework.locator_constants import LocatorConstant, ElementNameConstant
 class ArtistForm(BaseForm):
     __page_name = "Top result"
 
-
-
     def __init__(self):
         super(ArtistForm, self).__init__(
             (By.XPATH, LocatorConstant.PRECISE_TEXT_LOCATOR.format(self.__page_name)), self.__page_name)
