@@ -13,12 +13,8 @@ class SpotifyHomeForm(BaseForm):
         super(SpotifyHomeForm, self).__init__(
             (By.XPATH, LocatorConstant.PRECISE_TEXT_LOCATOR.format(self.__page_name)), self.__page_name)
 
-
     def click_search(self):
         self.__search_btn.click()
 
-
     def search_singer(self,name):
         self.__search_field.clear_and_type(name)
-
-
