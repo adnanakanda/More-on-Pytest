@@ -10,10 +10,9 @@ def pytest_sessionstart(session):
     PyQualityServices.browser_factory = BrowserFactory()
     PyQualityServices.get_browser()
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session", autouse = True)
 def browser(request):
     settings = JsonSettingsFile("config.json")
-    test_data = JsonSettingsFile("test_data.json")
 
     browser = PyQualityServices.get_browser()
     browser.maximize()
