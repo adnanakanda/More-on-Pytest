@@ -10,7 +10,7 @@ def pytest_sessionstart(session):
     PyQualityServices.browser_factory = BrowserFactory()
     PyQualityServices.get_browser()
 
-"""@pytest.fixture(scope="session", autouse = True)
+@pytest.fixture(scope="session", autouse = True)
 def browser(request):
     settings = JsonSettingsFile("config.json")
 
@@ -20,7 +20,7 @@ def browser(request):
 
     yield browser
 
-    browser.quit()"""
+    browser.quit()
 
 @pytest.fixture(scope="session")
 def api_client():

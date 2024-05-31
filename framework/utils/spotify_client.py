@@ -25,14 +25,16 @@ class SpotifyClient:
             headers=self.get_headers(),
             params={"q": artist_name, "type": "artist"}
         )
-        response.raise_for_status()
-        return response.json()["artists"]["items"][0]
+        if response.status_code != 200:
+            raise ConnectionError("Failed to get artist data!")
+        return response.json()["artists"]["items"][0] # retrieves the first searched name
 
     def get_artist_top_tracks(self, artist_id):
         response = requests.get(
             f"{BASE_API_URL}/artists/{artist_id}/top-tracks",
             headers=self.get_headers(),
-            params={"market": "US"}
+            params={"market": "US"} # should return results tailored to the US market.
         )
-        response.raise_for_status()
+        if response.status_code != 200:
+            raise ConnectionError("Failed to get artists' tracks data!")
         return response.json()["tracks"]
