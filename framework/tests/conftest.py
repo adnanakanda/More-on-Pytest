@@ -1,4 +1,5 @@
 import pytest
+
 from browser.py_quality_services import PyQualityServices
 from core.utilities.json_settings_file import JsonSettingsFile
 

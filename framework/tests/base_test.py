@@ -21,7 +21,15 @@ class Test_base:
 
 
 
+    @pytest.fixture(scope="session", autouse=True)
+    def prepare_browser_factory(request):
+        settings = JsonSettingsFile("config.json")
+        #self.test_data = JsonSettingsFile("test_data.json")
+
+        browser = PyQualityServices.get_browser()
+        browser.maximize()
+        browser.go_to(settings.get_value("url"))
+
         yield browser
 
         browser.quit()
-
