@@ -10,6 +10,15 @@ from framework.utils.browser_factory import BrowserFactory
 
 
 class Test_base:
+    @pytest.fixture(scope="session", autouse=True)
+    def prepare_browser_factory(request):
+        settings = JsonSettingsFile("config.json")
+        test_data = JsonSettingsFile("test_data.json")
+
+        browser = PyQualityServices.get_browser()
+        browser.maximize()
+        browser.go_to(settings.get_value("url"))
+
 
 
     @pytest.fixture(scope="session", autouse=True)
@@ -24,4 +33,3 @@ class Test_base:
         yield browser
 
         browser.quit()
-
