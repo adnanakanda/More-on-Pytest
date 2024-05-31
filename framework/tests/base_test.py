@@ -19,6 +19,8 @@ class Test_base:
         browser.maximize()
         browser.go_to(settings.get_value("url"))
 
+
+
         yield browser
 
         browser.quit()
