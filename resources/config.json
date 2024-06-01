@@ -1,6 +1,5 @@
 {
 
-  #"url": "https://jsonplaceholder.typicode.com",
-  "url": "https://www.wikipedia.org/",
+    "url": "https://open.spotify.com/",
   "fileExistsTimeout":  3000
 }
