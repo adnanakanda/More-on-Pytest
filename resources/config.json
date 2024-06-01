@@ -1,6 +1,5 @@
 {
-
-  #"url": "https://jsonplaceholder.typicode.com",
-  "url": "https://www.wikipedia.org/",
+  "BASE_API_URL": "https://api.spotify.com/v1",
+  "TOKEN_URL": "https://accounts.spotify.com/api/token",
   "fileExistsTimeout":  3000
 }
